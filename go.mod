@@ -1,6 +1,6 @@
 module github.com/aarondcarr/agent-event-bus
 
-go 1.27.3
+go 1.26.0
 
 require (
 	github.com/twmb/franz-go v1.22.3
