@@ -37,9 +37,9 @@ func (t Type) valid() bool {
 // Event is one structured fact emitted by an agent.
 type Event struct {
 	Version   int       `json:"version"`
-	ID        string    `json:"id"`         // producer-assigned, unique; the idempotency key
-	AgentID   string    `json:"agent_id"`   // Kafka partition key: per-agent ordering
-	RunID     string    `json:"run_id"`     // one agent task/session
+	ID        string    `json:"id"`       // producer-assigned, unique; the idempotency key
+	AgentID   string    `json:"agent_id"` // Kafka partition key: per-agent ordering
+	RunID     string    `json:"run_id"`   // one agent task/session
 	Type      Type      `json:"type"`
 	Timestamp time.Time `json:"ts"`
 

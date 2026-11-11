@@ -35,7 +35,7 @@ func TestRules(t *testing.T) {
 	}{
 		{"healthy agent", []event.Event{ev("a", event.ToolCall, 0), llm("a", time.Second, 500)}, ""},
 		{"errors trip at threshold", []event.Event{ev("a", event.Error, 0), ev("a", event.Error, 1), ev("a", event.Error, 2)}, "error_rate"},
-		{"errors outside window don't count", []event.Event{ev("a", event.Error, 0), ev("a", event.Error, time.Second), ev("a", event.Error, 2 * time.Minute)}, ""},
+		{"errors outside window don't count", []event.Event{ev("a", event.Error, 0), ev("a", event.Error, time.Second), ev("a", event.Error, 2*time.Minute)}, ""},
 		{"guard denials trip", []event.Event{denial("a", 0), denial("a", time.Second)}, "guard_denials"},
 		{"allowed guard decisions are fine", func() []event.Event {
 			e := ev("a", event.GuardDecision, 0)
